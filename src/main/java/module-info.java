@@ -4,6 +4,6 @@ module org.example {
     requires javafx.media;
     requires jasperreports;
     requires java.sql;
-    opens org.example to javafx.fxml;
-    exports org.example;
+    opens org.israeldelamo to javafx.fxml;
+    exports org.israeldelamo;
 }

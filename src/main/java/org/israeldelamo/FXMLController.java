@@ -1,4 +1,4 @@
-package org.example;
+package org.israeldelamo;
 /*
 Put header here
 
