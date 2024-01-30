@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.yxini.controllers.MainBibliotecaController">
+   <center>
+      <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="633.0" prefWidth="900.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab closable="false" onSelectionChanged="#selectAlumnos" text="Alumnos">
+               <content>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <center>
+                        <TableView fx:id="tablaAlumnos" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                           <columns>
+                              <TableColumn prefWidth="151.0" text="DNI" />
+                              <TableColumn prefWidth="282.0" text="Nombre" />
+                              <TableColumn prefWidth="221.0" text="Primer Apellido" />
+                              <TableColumn prefWidth="205.0" text="Segundo Apellido" />
+                           </columns>
+                        </TableView>
+                     </center>
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                     <top>
+                        <GridPane alignment="CENTER" prefHeight="150.0" prefWidth="679.0" BorderPane.alignment="CENTER">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="660.0" minWidth="10.0" prefWidth="105.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="602.0" minWidth="0.0" prefWidth="555.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="DNI: " GridPane.halignment="RIGHT" />
+                              <TextField fx:id="dniAlumnos" GridPane.columnIndex="1" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre: " GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                              <TextField fx:id="nombreAlumnos" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Primer apellido:" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+                              <TextField fx:id="primerAlumnos" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Segundo apellido: " GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
+                              <TextField fx:id="segundoAlumnos" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <HBox alignment="CENTER" prefHeight="45.0" prefWidth="382.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="4">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#anadirAlumno" text="Añadir" textAlignment="CENTER" HBox.hgrow="ALWAYS">
+                                       <HBox.margin>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                    <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#modficarAlumno" text="Modificar" textAlignment="CENTER" HBox.hgrow="ALWAYS">
+                                       <HBox.margin>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                    <Button layoutX="62.0" layoutY="10.0" mnemonicParsing="false" onAction="#borrarAlumno" text="Borrar" textAlignment="CENTER" HBox.hgrow="ALWAYS">
+                                       <HBox.margin>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                           </children>
+                           <BorderPane.margin>
+                              <Insets left="100.0" right="100.0" />
+                           </BorderPane.margin>
+                        </GridPane>
+                     </top>
+                  </BorderPane>
+               </content>
+            </Tab>
+          <Tab closable="false" onSelectionChanged="#selectLibros" text="Libros">
+               <content>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <center>
+                        <TableView fx:id="tablaLibros" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                           <columns>
+                              <TableColumn prefWidth="222.0" text="Título" />
+                              <TableColumn prefWidth="236.0" text="Autor" />
+                              <TableColumn prefWidth="196.0" text="Editorial" />
+                              <TableColumn prefWidth="139.0" text="Estado" />
+                              <TableColumn prefWidth="66.0" text="Baja" />
+                           </columns>
+                        </TableView>
+                     </center>
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                     <top>
+                        <GridPane alignment="CENTER" prefHeight="150.0" prefWidth="679.0" BorderPane.alignment="CENTER">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="266.0" minWidth="10.0" prefWidth="59.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="602.0" minWidth="10.0" prefWidth="601.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Título: " GridPane.halignment="RIGHT" />
+                              <TextField fx:id="tituloLibros" GridPane.columnIndex="1" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Autor: " GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                              <TextField fx:id="autorLibros" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Editorial: " GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+                              <TextField fx:id="editorialLibros" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Estado: " GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Baja: " GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
+                              <CheckBox fx:id="bajaLibros" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <ComboBox fx:id="estadoLibros" maxWidth="1.7976931348623157E308" prefWidth="150.0" promptText="Estado" visibleRowCount="4" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <HBox alignment="CENTER" prefHeight="45.0" prefWidth="382.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="5">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#anadirLibros" text="Añadir" textAlignment="CENTER" HBox.hgrow="ALWAYS">
+                                       <HBox.margin>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                    <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#modificarLibros" text="Modificar" textAlignment="CENTER" HBox.hgrow="ALWAYS">
+                                       <HBox.margin>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                    <Button layoutX="62.0" layoutY="10.0" mnemonicParsing="false" onAction="#borrarLibros" text="Borrar" textAlignment="CENTER" HBox.hgrow="ALWAYS">
+                                       <HBox.margin>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                    <CheckBox alignment="CENTER" mnemonicParsing="false" onAction="#changeVerPrestados" text="Ver prestados" />
+                                 </children>
+                                 <GridPane.margin>
+                                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                 </GridPane.margin>
+                              </HBox>
+                           </children>
+                           <BorderPane.margin>
+                              <Insets left="100.0" right="100.0" />
+                           </BorderPane.margin>
+                        </GridPane>
+                     </top>
+                  </BorderPane>
+               </content>
+            </Tab>
+            <Tab closable="false" onSelectionChanged="#selectPrestamos" text="Prestamos">
+               <content>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <center>
+                        <TableView fx:id="tablaPrestamos" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                           <columns>
+                              <TableColumn prefWidth="151.0" text="DNI" />
+                              <TableColumn prefWidth="282.0" text="Libro" />
+                              <TableColumn prefWidth="221.0" text="Fecha préstamo" />
+                              <TableColumn prefWidth="205.0" text="Fecha devolución" />
+                           </columns>
+                        </TableView>
+                     </center>
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                     <top>
+                        <GridPane alignment="CENTER" prefHeight="150.0" prefWidth="679.0" BorderPane.alignment="CENTER">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="660.0" minWidth="10.0" prefWidth="133.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="602.0" minWidth="0.0" prefWidth="527.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <ComboBox fx:id="libroPrestamos" maxWidth="1.7976931348623157E308" prefWidth="150.0" promptText="Libro" visibleRowCount="5" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" />
+                              <ComboBox fx:id="dniPrestamos" maxWidth="1.7976931348623157E308" prefWidth="150.0" promptText="DNI" visibleRowCount="5" GridPane.columnIndex="1" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="DNI Alumno: " GridPane.halignment="RIGHT" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Libro: " GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha de préstamo: " GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+                              <HBox alignment="CENTER" prefHeight="45.0" prefWidth="382.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="4">
+                                 <children>
+                                    <ComboBox fx:id="tipoPrestamos" prefWidth="150.0" promptText="Tipo" visibleRowCount="2">
+                                       <HBox.margin>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </HBox.margin>
+                                    </ComboBox>
+                                    <Button mnemonicParsing="false" onAction="#anadirPrestamo" text="Añadir" textAlignment="CENTER" HBox.hgrow="ALWAYS">
+                                       <HBox.margin>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                    <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#modificarPrestamo" text="Modificar" textAlignment="CENTER" HBox.hgrow="ALWAYS">
+                                       <HBox.margin>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                    <Button layoutX="62.0" layoutY="10.0" mnemonicParsing="false" onAction="#borrarPrestamo" text="Borrar" textAlignment="CENTER" HBox.hgrow="ALWAYS">
+                                       <HBox.margin>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                    <CheckBox alignment="CENTER" mnemonicParsing="false" onAction="#changeVerPrestados" text="Ver prestados" />
+                                 </children>
+                              </HBox>
+                              <DatePicker fx:id="fechaPrestamos" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Text layoutX="8.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha de devolucion: " GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
+                              <DatePicker fx:id="devolPrestamos" disable="true" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                           </children>
+                           <BorderPane.margin>
+                              <Insets left="100.0" right="100.0" />
+                           </BorderPane.margin>
+                        </GridPane>
+                     </top>
+                  </BorderPane>
+               </content>
+            </Tab>
+            <Tab closable="false" onSelectionChanged="#selectHistorico" text="Histórico">
+               <content>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <center>
+                        <TableView fx:id="tablaHistorico" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                          <columns>
+                            <TableColumn prefWidth="222.0" text="DNI" />
+                            <TableColumn prefWidth="277.0" text="Libro" />
+                              <TableColumn prefWidth="204.0" text="Fecha préstamo" />
+                              <TableColumn prefWidth="156.0" text="Fecha devolución" />
+                          </columns>
+                        </TableView>
+                     </center>
+                     <top>
+                        <VBox alignment="CENTER" prefHeight="123.0" prefWidth="900.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <ComboBox fx:id="filtroHistorico" prefWidth="150.0" promptText="Filtrar por" />
+                              <HBox fx:id="containerHistorico" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" />
+                           </children>
+                        </VBox>
+                     </top>
+                     <opaqueInsets>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                  </BorderPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Archivo">
+            <items>
+                  <Menu mnemonicParsing="false" text="Informes">
+                    <items>
+                    <MenuItem mnemonicParsing="false" onAction="#abrirInformeDos" text="Listado de libros" />
+                      <MenuItem mnemonicParsing="false" onAction="#abrirInforme3" text="Informe estadísitico" />
+                        <MenuItem mnemonicParsing="false" onAction="#abrirInforme4" text="Informe del alumnado" />
+                    </items>
+                  </Menu>
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+</BorderPane>
