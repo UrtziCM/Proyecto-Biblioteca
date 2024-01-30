@@ -1,4 +1,4 @@
-package org.israeldelamo;
+package org.yxini;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

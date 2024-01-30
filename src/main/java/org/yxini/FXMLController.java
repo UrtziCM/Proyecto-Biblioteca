@@ -1,4 +1,4 @@
-package org.israeldelamo;
+package org.yxini;
 /*
 Put header here
 
@@ -25,10 +25,6 @@ import net.sf.jasperreports.engine.util.JRLoader;
 import net.sf.jasperreports.view.JasperViewer;
 
 public class FXMLController implements Initializable {
-    
-    @FXML
-    private Label lblOut;
-    
     @FXML
     private void btnClickAction(ActionEvent event) {
 
@@ -46,7 +42,6 @@ public class FXMLController implements Initializable {
             alert.showAndWait();
             e.printStackTrace();
         }
-        lblOut.setText("Hello World!");
     }
     
     @Override
