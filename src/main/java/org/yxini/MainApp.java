@@ -17,25 +17,15 @@ public class MainApp extends Application {
     @Override
     public void start(@SuppressWarnings("exports") Stage s) throws IOException {
         stage=s;
-        setRoot("primary","");
+        setRoot();
     }
 
-    static void setRoot(String fxml) throws IOException {
-        setRoot(fxml,stage.getTitle());
-    }
-
-    static void setRoot(String fxml, String title) throws IOException {
-        Scene scene = new Scene(loadFXML(fxml));
-        stage.setTitle(title);
+    static void setRoot() throws IOException {
+        Scene scene = new Scene(new FXMLLoader(MainApp.class.getResource("/fxml/biblioteca.fxml")).load());
+        stage.setTitle("Gestion de biblioteca");
         stage.setScene(scene);
         stage.show();
     }
-
-    private static Parent loadFXML(String fxml) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("/fxml/"+fxml + ".fxml"));
-        return fxmlLoader.load();
-    }
-
 
     public static void main(String[] args) {
         launch(args);
