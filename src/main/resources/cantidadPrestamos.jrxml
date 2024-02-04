@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.21.0.final using JasperReports Library version 6.21.0-4f56c4f36cd19e17675219a9ac4692d5f0f13b06  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="cantidadPrestamos" pageWidth="595" pageHeight="200" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="947e03e3-8b12-4d18-8459-b1f5e1123d78">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Libros DB"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="dni" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT COUNT(dni), SUM(DATEDIFF(fecha_devolucion,fecha_prestamo)) FROM alumno,historico_prestamo WHERE dni = dni_alumno AND dni = $P{dni} GROUP BY dni]]>
+	</queryString>
+	<field name="COUNT(dni)" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="COUNT(dni)"/>
+		<property name="com.jaspersoft.studio.field.label" value="COUNT(dni)"/>
+	</field>
+	<field name="SUM(DATEDIFF(fecha_devolucion,fecha_prestamo))" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="SUM(DATEDIFF(fecha_devolucion,fecha_prestamo))"/>
+		<property name="com.jaspersoft.studio.field.label" value="SUM(DATEDIFF(fecha_devolucion,fecha_prestamo))"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="30" y="0" width="250" height="34" uuid="c1c8b234-bc65-422e-8f68-ed0721b787d8">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="dc2ac567-316c-4a76-9e40-e478419c1702"/>
+				</reportElement>
+				<text><![CDATA[Cantidad de prestamos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="0" width="275" height="35" uuid="b34f3640-72e6-4cfe-b111-70daa40064e4">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="dc2ac567-316c-4a76-9e40-e478419c1702"/>
+				</reportElement>
+				<text><![CDATA[Tiempo total con libros prestados]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="64" splitType="Stretch">
+			<textField>
+				<reportElement x="30" y="0" width="250" height="64" uuid="492a3dc1-be37-4097-b140-f6a580cbd9ea">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="dc2ac567-316c-4a76-9e40-e478419c1702"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{COUNT(dni)}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="0" width="274" height="63" uuid="4398ee8d-c60d-4d24-ac8a-e9e0add308f8">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="fe2fcaa4-01a4-4493-a725-1ce7182dde64"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{SUM(DATEDIFF(fecha_devolucion,fecha_prestamo))}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
