@@ -10,7 +10,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-
+/**
+ * Clase principal de la aplicacion.
+ */
 public class MainApp extends Application {
     private static Stage stage;
 
@@ -20,6 +22,10 @@ public class MainApp extends Application {
         setRoot();
     }
 
+    /**
+     * Establece la raíz de la ventana principal de la aplicacion.
+     * @throws IOException Si no se ha podido establecer la ventana principal.
+     */
     static void setRoot() throws IOException {
         Scene scene = new Scene(new FXMLLoader(MainApp.class.getResource("/fxml/biblioteca.fxml")).load());
         stage.setTitle("Gestion de biblioteca");
