@@ -1,16 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="322ac308-f863-4df3-bace-a1bec5787a82" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/secret.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/yxini/FXMLController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/yxini/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/yxini/MainApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/yxini/controllers/MainBibliotecaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/yxini/controllers/MainBibliotecaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/yxini/controllers/db/secret.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/yxini/models/Alumno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/yxini/models/Alumno.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/yxini/models/Libro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/yxini/models/Libro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/yxini/models/Prestamo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/yxini/models/Prestamo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/biblioteca.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/biblioteca.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/informes/informe.jasper" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/informes/informe.jasper" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,18 +63,24 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/ProyectosIntelij/JavaFXConJasper",
-    "project.structure.last.edited": "Project",
+    "last_opened_file_path": "C:/Users/Main/Documents/DEIN/ProyectoBiblioteca/src/main/resources/informes",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "trusted.hosts"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="org.yxini.models" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Main\Documents\DEIN\ProyectoBiblioteca\src\main\resources\informes" />
       <recent name="C:\ProyectosIntelij\JavaFXConJasper\MavenFuncionando\src\main\java\org\example" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Main\Documents\DEIN\ProyectoBiblioteca\src\main\resources" />
+      <recent name="C:\Users\Main\Documents\DEIN\ProyectoBiblioteca\src\main\resources\imagenes" />
       <recent name="C:\ProyectosIntelij\JavaFXConJasper\MavenFuncionando\src\main\resources\informes" />
       <recent name="C:\ProyectosIntelij\JavaFXConJasper\MavenFuncionando\src\main\resources" />
     </key>
