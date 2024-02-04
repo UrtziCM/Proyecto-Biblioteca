@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.21.0.final using JasperReports Library version 6.21.0-4f56c4f36cd19e17675219a9ac4692d5f0f13b06  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="prestamosLibro" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f13ff680-747b-4e83-ab03-43c4a68b63ad">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Libros DB"/>
+	<parameter name="codigo" class="java.lang.Integer" isForPrompting="false"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM prestamo WHERE codigo_libro = $P{codigo}]]>
+	</queryString>
+	<field name="id_prestamo" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="id_prestamo"/>
+		<property name="com.jaspersoft.studio.field.label" value="id_prestamo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="prestamo"/>
+	</field>
+	<field name="dni_alumno" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="dni_alumno"/>
+		<property name="com.jaspersoft.studio.field.label" value="dni_alumno"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="prestamo"/>
+	</field>
+	<field name="codigo_libro" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="codigo_libro"/>
+		<property name="com.jaspersoft.studio.field.label" value="codigo_libro"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="prestamo"/>
+	</field>
+	<field name="fecha_prestamo" class="java.time.LocalDateTime">
+		<property name="com.jaspersoft.studio.field.name" value="fecha_prestamo"/>
+		<property name="com.jaspersoft.studio.field.label" value="fecha_prestamo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="prestamo"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="141" height="30" uuid="44a678d3-2704-4500-ad88-a52a0337f077">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a4c505ff-5d92-4abf-ae7c-3909a3906db0"/>
+				</reportElement>
+				<text><![CDATA[ID Prestamo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="141" y="0" width="138" height="30" uuid="30e0a800-e824-40e7-8820-bd2198ad0adb">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="78434232-bc7c-47de-90e6-8b2eb6a47c69"/>
+				</reportElement>
+				<text><![CDATA[DNI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="279" y="0" width="138" height="30" uuid="5d5edd6b-bf62-45af-b952-18b3251aa570">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5b1f7c46-cada-4216-807f-fc2080f35fea"/>
+				</reportElement>
+				<text><![CDATA[Codigo del libro]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="417" y="0" width="138" height="30" uuid="81391d2c-66ea-4f22-86b7-cf2a065144ce">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c2a6e04b-9604-4a3b-897a-9a79a76e608b"/>
+				</reportElement>
+				<text><![CDATA[Fecha]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="141" height="30" uuid="1f1acb17-f266-47fc-91be-51f9b156a93a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a4c505ff-5d92-4abf-ae7c-3909a3906db0"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{id_prestamo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="141" y="0" width="138" height="30" uuid="cd69aa66-c2ff-45bc-93e2-b487b4b35f4c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="78434232-bc7c-47de-90e6-8b2eb6a47c69"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{dni_alumno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="279" y="0" width="138" height="30" uuid="8b1e616f-a730-4b1f-91d2-feceee01a317">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5b1f7c46-cada-4216-807f-fc2080f35fea"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{codigo_libro}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="417" y="0" width="138" height="30" uuid="25570364-4004-409b-9e1e-68ccd7848de3">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c2a6e04b-9604-4a3b-897a-9a79a76e608b"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{fecha_prestamo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
